@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zqls-parent</artifactId>
+        <groupId>com.duanxin.zqls</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../zqls-api/zqls-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>zqls-ucenter</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>zqls-ucenter-service-api</module>
+        <module>zqls-ucenter-service</module>
+        <module>zqls-ucenter-web</module>
+        <module>zqls-ucenter-dao</module>
+    </modules>
+
+    <dependencies>
+        <!-- 引入公共模块 -->
+        <dependency>
+            <groupId>com.duanxin.zqls</groupId>
+            <artifactId>zqls-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 引入dao模块 -->
+        <dependency>
+            <groupId>com.duanxin.zqls</groupId>
+            <artifactId>zqls-ucenter-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

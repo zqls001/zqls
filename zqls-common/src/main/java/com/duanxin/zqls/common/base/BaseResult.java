@@ -38,7 +38,7 @@ public class BaseResult {
      * 操作成功返回结果
      * @param data 数据结果集
      * @date 2019/9/15 14:41
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     public static BaseResult success(Object data) {
         return new BaseResult(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
@@ -49,9 +49,9 @@ public class BaseResult {
      * @param message 提示信息
      * @param data 数据结果集
      * @date 2019/9/15 14:42
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
-    public static BaseResult successful(String message, Object data) {
+    public static BaseResult success(String message, Object data) {
         return new BaseResult(ResultCode.SUCCESS.getCode(), message, data);
     }
 
@@ -59,7 +59,7 @@ public class BaseResult {
      * 操作失败返回结果
      * @param code 错误状态码
      * @date 2019/9/15 14:44
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     private static BaseResult failed(IErrorCode code) {
         return new BaseResult(code.getCode(), code.getMessage(), null);
@@ -69,7 +69,7 @@ public class BaseResult {
      * 操作失败返回结果
      * @param message 提示信息
      * @date 2019/9/15 14:46
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     public static BaseResult failed(String message) {
         return new BaseResult(ResultCode.FAILED.getCode(), message, null);
@@ -78,7 +78,7 @@ public class BaseResult {
     /**
      * 操作失败返回结果
      * @date 2019/9/15 14:47
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     public static BaseResult failed() {
         return failed(ResultCode.FAILED);
@@ -88,7 +88,7 @@ public class BaseResult {
      * 参数校验失败返回结果
      * @param message 提示信息
      * @date 2019/9/15 14:48
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     public static BaseResult validateFailed(String message) {
         return new BaseResult(ResultCode.VALIDATE_FAILED.getCode(), message, null);
@@ -98,7 +98,7 @@ public class BaseResult {
      * 未登入返回结果
      * @param data 数据结果集
      * @date 2019/9/15 14:50
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     public static BaseResult unauthorized(Object data) {
         return new BaseResult(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
@@ -108,7 +108,7 @@ public class BaseResult {
      * 未授权返回结果
      * @param data 数据结果集
      * @date 2019/9/15 14:52
-     * @return com.duanxin.zqls.common.base.BaseResult
+     * @return BaseResult
      **/
     public static BaseResult forbidden(Object data) {
         return new BaseResult(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
