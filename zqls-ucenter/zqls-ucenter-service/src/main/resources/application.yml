@@ -20,9 +20,9 @@ spring:
     druid:
       url: jdbc:mysql://localhost:3306/zqls
       username: root
-      #password: XvzyYd6lUV/ht2UqjGjXAUYJGIcWrBLVCLrJdx6jpfv2aQRtwMw6Ewv5HFtlAuq1C8/L6X6ZxmOs3ua997vMdw==
+      password: XvzyYd6lUV/ht2UqjGjXAUYJGIcWrBLVCLrJdx6jpfv2aQRtwMw6Ewv5HFtlAuq1C8/L6X6ZxmOs3ua997vMdw==
       filters: config,stat,wall
-      #connect-properties: config.decrypt=true;config.decrypt.key=${publickey}
+      connection-properties: config.decrypt=true;config.decrypt.key=${publickey}
       initial-size: 5
       max-active: 20
       min-idle: 5
@@ -35,7 +35,6 @@ spring:
       test-on-return: false
       max-pool-prepared-statement-per-connection-size: 20
       use-global-data-source-stat: true
-      password: weiming19990304
 
 
 

@@ -34,6 +34,7 @@ public class DruidConfig {
      * @date 2019/9/20 9:30
      * @return org.springframework.boot.web.servlet.ServletRegistrationBean
      **/
+    @Bean
     public ServletRegistrationBean statViewServlet() {
         ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
 
@@ -54,6 +55,7 @@ public class DruidConfig {
      * @date 2019/9/20 9:34
      * @return org.springframework.boot.web.servlet.FilterRegistrationBean
      **/
+    @Bean
     public FilterRegistrationBean webStatFilter() {
         FilterRegistrationBean bean = new FilterRegistrationBean();
         bean.setFilter(new WebStatFilter());

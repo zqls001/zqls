@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * 同意返回结果类
@@ -112,5 +115,15 @@ public class BaseResult {
      **/
     public static BaseResult forbidden(Object data) {
         return new BaseResult(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
+    }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("code", code);
+        map.put("message", message);
+        map.put("data", data);
+
+        return map;
     }
 }

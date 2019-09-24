@@ -1,13 +1,13 @@
 package com.duanxin.zqls.ucenter.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.duanxin.zqls.common.base.BaseConstants;
+import com.duanxin.zqls.common.base.BaseController;
 import com.duanxin.zqls.common.base.BaseResult;
 import com.duanxin.zqls.ucenter.UmsUserInfoService;
 import com.duanxin.zqls.ucenter.model.UmsUserInfo;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 用户信息Controller层实现
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin(origins = "")
-public class UmsUserInfoController {
+public class UmsUserInfoController extends BaseController {
 
     @Reference
     private UmsUserInfoService umsUserInfoService;
@@ -26,8 +26,18 @@ public class UmsUserInfoController {
     public BaseResult getUmsUserInfoByPrimaryKey(@PathVariable("id") Integer id) {
         UmsUserInfo umsUserInfo = umsUserInfoService.selectByPrimaryKey(id);
         if (null != umsUserInfo) {
-            return BaseResult.success(umsUserInfo);
+            String status = String.valueOf(umsUserInfo.getStatus());
+            if (StringUtils.isNotBlank(status) && StringUtils.equals(status, BaseConstants.STATUS_CONSTANT)) {
+                return BaseResult.success(umsUserInfo);
+            }
         }
-        return BaseResult.failed("id不存在");
+        return BaseResult.failed("该用户不存在");
+    }
+
+    @DeleteMapping("/UmsUser/{id}")
+    public BaseResult deleteUserInfoByPrimaryKey(@PathVariable("id") Integer id) {
+        umsUserInfoService.deleteUserInfoByPrimaryKey(id);
+
+        return BaseResult.success("删除成功",id);
     }
 }

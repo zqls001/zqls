@@ -42,13 +42,7 @@ public interface UmsAclMapper {
 
     List<UmsAcl> selectByExample(UmsAclExample example);
 
-    @Select({
-        "select",
-        "id, code, name, url, type, status, remark, operate_time, operate_ip, operator",
-        "from ums_acl",
-        "where id = #{id,jdbcType=INTEGER}"
-    })
-    @ResultMap("com.duanxin.zqls.ucenter.mapper.UmsAclMapper.BaseResultMap")
+
     UmsAcl selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") UmsAcl record, @Param("example") UmsAclExample example);

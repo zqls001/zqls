@@ -48,14 +48,6 @@ public interface UmsUserInfoMapper {
 
     List<UmsUserInfo> selectByExample(UmsUserInfoExample example);
 
-    @Select({
-        "select",
-        "id, aid, job_number, user_name, password, gender, head_pic, phone, email, remark, ",
-        "status, type, create_time, operate_time, operate_ip, operator",
-        "from ums_user_info",
-        "where id = #{id,jdbcType=INTEGER}"
-    })
-    @ResultMap("com.duanxin.zqls.ucenter.mapper.UmsUserInfoMapper.BaseResultMap")
     UmsUserInfo selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") UmsUserInfo record, @Param("example") UmsUserInfoExample example);

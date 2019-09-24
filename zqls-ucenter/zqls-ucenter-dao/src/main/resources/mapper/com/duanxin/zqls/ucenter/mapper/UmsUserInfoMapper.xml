@@ -350,4 +350,10 @@
       order by ${orderByClause}
     </if>
   </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="int">
+    select *
+    from zqls.ums_user_info
+    where id = #{id}
+  </select>
 </mapper>
