@@ -1,6 +1,7 @@
 package com.duanxin.zqls.common.base;
 import com.duanxin.zqls.common.util.SpringContextUtil;
 import com.github.pagehelper.PageHelper;
+import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.InvocationTargetException;
 import	java.lang.reflect.Method;
@@ -14,6 +15,7 @@ import java.util.List;
  * @version 1.0
  * @date 2019/9/16 9:23
  */
+@Slf4j
 public abstract class BaseServiceImpl<Mapper, Record, Example> implements BaseService<Record, Example> {
 
     private Mapper mapper;
@@ -104,9 +106,9 @@ public abstract class BaseServiceImpl<Mapper, Record, Example> implements BaseSe
 
     @Override
     public Record selectByPrimaryKey(Integer id) {
-
+        Method selectByPrimaryKey = null;
         try {
-            Method selectByPrimaryKey = mapper.getClass().getDeclaredMethod("selectByPrimaryKey", id.getClass());
+            selectByPrimaryKey = mapper.getClass().getDeclaredMethod("selectByPrimaryKey", id.getClass());
             Object result = selectByPrimaryKey.invoke(mapper, id);
 
             return (Record) result;

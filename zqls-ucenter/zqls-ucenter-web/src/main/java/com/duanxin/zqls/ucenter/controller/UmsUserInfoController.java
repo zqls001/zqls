@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.duanxin.zqls.common.base.BaseConstants;
 import com.duanxin.zqls.common.base.BaseController;
 import com.duanxin.zqls.common.base.BaseResult;
-import com.duanxin.zqls.ucenter.UmsUserInfoService;
+import com.duanxin.zqls.ucenter.api.UmsUserInfoService;
 import com.duanxin.zqls.ucenter.model.UmsUserInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication()
-@MapperScan(basePackages = "com.duanxin.zqls.ucenter.mapper")
+@MapperScan("com.duanxin.zqls.ucenter.mapper")
 public class ZqlsUcenterServiceApplication {
 
     public static void main(String[] args) {

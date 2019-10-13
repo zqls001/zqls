@@ -24,6 +24,7 @@
         <!-- 项目版本管理 -->
         <fastjson.version>1.2.60</fastjson.version>
         <dubbo-starter.version>1.1.2</dubbo-starter.version>
+        <!--<dubbo-start.version>2.0.0</dubbo-start.version>-->
         <dubbo.version>2.6.6</dubbo.version>
         <zkclient.version>0.11</zkclient.version>
         <mybatis.version>2.1.0</mybatis.version>
@@ -117,6 +118,12 @@
                 <artifactId>spring-boot-starter-dubbo</artifactId>
                 <version>${dubbo-starter.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba.spring.boot/dubbo-spring-boot-starter -->
+            <!--<dependency>
+                <groupId>com.alibaba.spring.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-start.version}</version>
+            </dependency>-->
 
             <!-- Zookeeper之开源客户端 -->
             <dependency>

@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.duanxin.zqls.common.annotation.BaseService;
 import com.duanxin.zqls.common.base.BaseServiceImpl;
 import com.duanxin.zqls.common.exception.CheckException;
-import com.duanxin.zqls.ucenter.UmsUserInfoService;
+import com.duanxin.zqls.ucenter.api.UmsUserInfoService;
 import com.duanxin.zqls.ucenter.mapper.UmsUserInfoMapper;
 import com.duanxin.zqls.ucenter.model.UmsUserInfo;
 import com.duanxin.zqls.ucenter.model.UmsUserInfoExample;
@@ -22,7 +22,6 @@ import javax.annotation.Resource;
 @BaseService
 @Transactional(rollbackFor = Exception.class)
 public class UmsUserInfoServiceImpl extends BaseServiceImpl<UmsUserInfoMapper, UmsUserInfo, UmsUserInfoExample> implements UmsUserInfoService {
-
     @Resource
     private UmsUserInfoMapper umsUserInfoMapper;
 

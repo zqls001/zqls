@@ -13,8 +13,6 @@
     <artifactId>zqls-service-api</artifactId>
 
     <dependencies>
-
-
         <!-- 引入通用工具包 -->
         <dependency>
             <groupId>com.duanxin.zqls</groupId>

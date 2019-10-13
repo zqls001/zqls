@@ -13,7 +13,7 @@
     <artifactId>zqls-demo</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>mybatis-plus-demo</module>
+
     </modules>
 
 
